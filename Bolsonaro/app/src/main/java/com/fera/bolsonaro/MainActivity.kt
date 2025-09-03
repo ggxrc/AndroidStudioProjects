@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         buttonIniciar.setOnClickListener {
             contadorRodando = !contadorRodando
             if (contadorRodando){
-                iniciarContador()
+                iniciarContador() // incompleto
                 textViewEstado.text = "Contador parado"
             }
 
