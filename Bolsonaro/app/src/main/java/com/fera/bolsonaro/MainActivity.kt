@@ -39,8 +39,9 @@ class MainActivity : AppCompatActivity() {
         buttonIniciar.setOnClickListener {
             contadorRodando = !contadorRodando
             if (contadorRodando){
-                iniciarContador() // incompleto
-                textViewEstado.text = "Contador parado"
+                iniciarContador()
+            }else{
+                pararContador()
             }
 
         }
@@ -48,6 +49,49 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate - Activity está sendo criada")
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart - Activity ficando visível")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume - Activity em primeiro plano")
+        if (contadorRodando){
+            iniciarContador()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause - Activity perdeu o foco")
+        pararContador()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop - Activity não visível")
+    }
+    fun iniciarContador(){
+        timer = object : CountDownTimer(Long.MAX_VALUE, 1000){
+            override fun onTick(millisUntilFinish: Long) {
+                contador++
+                atualizarInterface()
+            }
+
+            override fun onFinish() {
+                // farei o L
+            }
+        }
+        timer?.start()
+        contadorRodando = true
+        buttonIniciar.text = "Parar"
+    }
+
+    fun pararContador(){
+        timer?.cancel()
+        buttonIniciar.text = "Começar"
+    }
     fun atualizarInterface(){
         textViewContador.text = "Contador: $contador"
     }
