@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.fera.bolsonaro"
+    namespace = "com.fera.contador"
     compileSdk = 36
 
     defaultConfig {
