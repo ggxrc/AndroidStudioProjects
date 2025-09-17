@@ -40,12 +40,12 @@ class Segunda_Tela : AppCompatActivity(){
                     textoTitulos.append("$titulo\n")
                 }
             }
-            "Argentina" -> {
+            "Boludo" -> {
                 for (titulo in argentina){
                     textoTitulos.append("$titulo\n")
                 }
             }
-            "Alemanha" -> {
+            "MilNoveCentoseQuarentaeCinco" -> {
                 for (titulo in alemanha){
                     textoTitulos.append("$titulo\n")
                 }
