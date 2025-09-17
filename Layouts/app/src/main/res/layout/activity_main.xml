@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/titulo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="Supercampeões\n - Copa do Mundo -"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            tools:layout_editor_absoluteX="104dp"
+            tools:layout_editor_absoluteY="77dp" />
+
+        <ImageButton
+            android:id="@+id/Brasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="200dp"
+            android:background="@color/white"
+            android:onClick="titulos"
+            app:srcCompat="@drawable/brasil"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="267dp" />
+
+        <ImageButton
+            android:id="@+id/MilNoveCentoseQuarentaeCinco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="60dp"
+            android:background="@color/white"
+            android:onClick="titulos"
+            app:srcCompat="@drawable/alemanha"
+            tools:layout_editor_absoluteX="239dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+        <ImageButton
+            android:id="@+id/Italia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Brasil"
+            android:layout_alignLeft="@id/Brasil"
+            android:layout_marginTop="100dp"
+            android:background="@color/white"
+            android:onClick="titulos"
+            app:srcCompat="@drawable/italia"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="523dp" />
+
+        <ImageButton
+            android:id="@+id/Boludo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Brasil"
+            android:layout_alignRight="@id/MilNoveCentoseQuarentaeCinco"
+            android:layout_marginTop="100dp"
+            android:background="@color/white"
+            android:onClick="titulos"
+            app:srcCompat="@drawable/argentina"
+            tools:layout_editor_absoluteX="228dp"
+            tools:layout_editor_absoluteY="521dp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
