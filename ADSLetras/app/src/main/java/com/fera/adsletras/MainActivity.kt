@@ -1,5 +1,6 @@
 package com.fera.adsletras
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -46,15 +47,27 @@ class MainActivity : AppCompatActivity() {
 
         when (curso){
             "Letras" -> {
-                AlertDialog.Builder(this)
-                    .setTitle("Aviso")
-                    .setMessage("Olá $nome. Sinto muito, não queremos" +
-                            " saber de ninguém de letras.")
-                    .setPositiveButton("OK", null)
-                    .show()
-                fun onDestroy(){
-                    super.onDestroy()
+                if(nome.isEmpty()){
+                    AlertDialog.Builder(this)
+                        .setTitle("é fogo")
+                        .setMessage("nem pra ter a decência de colocar seu nome... " +
+                                "tinha que ser de Letras.")
+                        .setPositiveButton("Vá se lascar")  { _, _ ->
+                            finishAffinity()
+                        }
+                        .show()
+                } else{
+                    AlertDialog.Builder(this)
+                        .setTitle("Aviso")
+                        .setMessage("Olá $nome. Sinto muito, não queremos" +
+                                " saber de ninguém de letras.")
+                        .setPositiveButton("OK") { _, _ ->
+                            finishAffinity()
+                        }
+                        .show()
+
                 }
+
             }
             "ADS" -> {
                 val semestre = meuSpinner.selectedItem.toString()
